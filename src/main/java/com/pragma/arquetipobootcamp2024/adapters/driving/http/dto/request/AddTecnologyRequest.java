@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class AddTecnologiaRequest {
+public class AddTecnologyRequest {
     private final String name;
     private final String descrip;
 }

@@ -13,9 +13,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class TecnologiaEntity {
+public class TecnologyEntity {
     @Id
-    @Column(name = "id_tecnologia")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;

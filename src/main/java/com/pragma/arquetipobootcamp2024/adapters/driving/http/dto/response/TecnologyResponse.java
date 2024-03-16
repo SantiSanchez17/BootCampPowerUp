@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class TecnologiaResponse {
+public class TecnologyResponse {
     private final Long id;
     private final String name;
     private final String descrip;

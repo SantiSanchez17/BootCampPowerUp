@@ -1,11 +1,11 @@
 package com.pragma.arquetipobootcamp2024.configuration;
 
-import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.adapter.TecnologiaAdapter;
-import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.mapper.ITecnologiaEntityMapper;
-import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.repository.ITecnologiaRepository;
-import com.pragma.arquetipobootcamp2024.domain.api.ITecnologiaServicePort;
-import com.pragma.arquetipobootcamp2024.domain.api.usecase.TecnologiaUseCase;
-import com.pragma.arquetipobootcamp2024.domain.spi.ITecnologiaPersistencePort;
+import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.adapter.TecnologyAdapter;
+import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.mapper.ITecnologyEntityMapper;
+import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.repository.ITecnologyRepository;
+import com.pragma.arquetipobootcamp2024.domain.api.ITecnologyServicePort;
+import com.pragma.arquetipobootcamp2024.domain.api.usecase.TecnologyUseCase;
+import com.pragma.arquetipobootcamp2024.domain.spi.ITecnologyPersistencePort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,15 +13,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RequiredArgsConstructor
 public class BeanConfiguration {
-    private final ITecnologiaRepository tecnologiaRepository;
-    private final ITecnologiaEntityMapper tecnologiaEntityMapper;
+    private final ITecnologyRepository tecnologiaRepository;
+    private final ITecnologyEntityMapper tecnologiaEntityMapper;
     @Bean
-    public ITecnologiaPersistencePort tecnologiaPersistencePort(){
-        return new TecnologiaAdapter(tecnologiaRepository, tecnologiaEntityMapper);
+    public ITecnologyPersistencePort tecnologiaPersistencePort(){
+        return new TecnologyAdapter(tecnologiaRepository, tecnologiaEntityMapper);
     }
     @Bean
-    public ITecnologiaServicePort tecnologiaServicePort(){
-        return new TecnologiaUseCase(tecnologiaPersistencePort());
+    public ITecnologyServicePort tecnologiaServicePort(){
+        return new TecnologyUseCase(tecnologiaPersistencePort());
     }
 
 }

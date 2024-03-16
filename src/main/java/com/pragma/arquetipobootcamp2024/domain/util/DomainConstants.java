@@ -7,7 +7,7 @@ public final class DomainConstants {
 
     public enum Field {
         NAME,
-        DESCRIPCION,
+        DESCRIPCION
     }
 
     public static final String FIELD_NAME_NULL_MESSAGE = "Field 'name' cannot be null";

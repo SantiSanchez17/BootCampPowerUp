@@ -2,7 +2,7 @@ package com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.adapter;
 
 import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.entity.TecnologyEntity;
 import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.exception.ElementNotFoundException;
-import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.exception.TecnologyAlreadyExistExeption;
+import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.exception.TecnologyAlreadyExistsException;
 import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.mapper.ITecnologyEntityMapper;
 import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.repository.ITecnologyRepository;
 import com.pragma.arquetipobootcamp2024.domain.model.Tecnology;
@@ -19,7 +19,7 @@ public class TecnologyAdapter implements ITecnologyPersistencePort {
     @Override
     public void saveTecnology(Tecnology tecnology) {
         if (tecnologiaRepository.findByName(tecnology.getName()).isPresent()){
-            throw new TecnologyAlreadyExistExeption();
+            throw new TecnologyAlreadyExistsException();
         }
         tecnologiaRepository.save(tecnologyEntityMapper.toEntity(tecnology));
     }

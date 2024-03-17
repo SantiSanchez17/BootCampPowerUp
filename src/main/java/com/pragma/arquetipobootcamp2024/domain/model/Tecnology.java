@@ -17,6 +17,9 @@ public class Tecnology {
         if (descrip.trim().isEmpty()){
             throw new EmptyFieldException(DomainConstants.Field.DESCRIPCION.toString());
         }
+        /*if (name.length()>){
+            throw new IllegalAccessException();
+        }*/
 
         this.id = id;
         this.name = requireNonNull(name, DomainConstants.FIELD_NAME_NULL_MESSAGE);

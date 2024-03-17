@@ -7,8 +7,7 @@ import java.util.List;
 public interface ITecnologyServicePort {
     void saveTecnology(Tecnology tecnology);
     Tecnology getTecnology(String name);
-    List<Tecnology> getAllTecnologias(Integer page, Integer size);
-    List<Tecnology> getAllTecnologiasByCapacidad(String capacidad, Integer page, Integer size);
-    Tecnology updateTecnologia(Tecnology tecnology);
+    List<Tecnology> getAllTecnologys(Integer page, Integer size, String sort);
+    Tecnology updateTecnology(Tecnology tecnology);
     void deleteTecnologia(Long id);
 }

@@ -24,23 +24,18 @@ public class TecnologyUseCase implements ITecnologyServicePort {
     }
 
     @Override
-    public List<Tecnology> getAllTecnologias(Integer page, Integer size) {
-        return null;
+    public List<Tecnology> getAllTecnologys(Integer page, Integer size, String sort) {
+        return tecnologyPersistencePort.getAllTecnology(page, size, sort);
     }
 
     @Override
-    public List<Tecnology> getAllTecnologiasByCapacidad(String capacidad, Integer page, Integer size) {
-        return null;
-    }
-
-    @Override
-    public Tecnology updateTecnologia(Tecnology tecnology) {
-        return null;
+    public Tecnology updateTecnology(Tecnology tecnology) {
+        return tecnologyPersistencePort.updateTecnology(tecnology);
     }
 
     @Override
     public void deleteTecnologia(Long id) {
-
+        tecnologyPersistencePort.deleteTecnology(id);
     }
 
 }

@@ -41,7 +41,7 @@ public class ControllerAdvisor {
                 Constants.ELEMENT_NOT_FOUND_EXCEPTION_MESSAGE, HttpStatus.CONFLICT.toString(), LocalDateTime.now()));
     }
     @ExceptionHandler(TecnologyAlreadyExistsException.class)
-    public ResponseEntity<ExceptionResponse> handleProductAlreadyExistsException() {
+    public ResponseEntity<ExceptionResponse> handleTecnologyAlreadyExistsException() {
         return ResponseEntity.badRequest().body(new ExceptionResponse(Constants.TECNOLOGY_ALREADY_EXISTS_EXCEPTION_MESSAGE,
                 HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
     }

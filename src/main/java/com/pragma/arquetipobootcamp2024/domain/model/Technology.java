@@ -5,12 +5,12 @@ import com.pragma.arquetipobootcamp2024.domain.util.DomainConstants;
 
 import static java.util.Objects.requireNonNull;
 
-public class Tecnology {
+public class Technology {
     private final Long id;
     private final String name;
     private final String descrip;
 
-    public Tecnology(long id, String name, String descrip){
+    public Technology(long id, String name, String descrip){
         if (name.trim().isEmpty()){
             throw new EmptyFieldException(DomainConstants.Field.NAME.toString());
         }

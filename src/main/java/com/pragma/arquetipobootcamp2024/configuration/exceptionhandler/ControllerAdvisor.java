@@ -1,8 +1,9 @@
 package com.pragma.arquetipobootcamp2024.configuration.exceptionhandler;
 
+import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.exception.CapabilityAlreadyExistsException;
 import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.exception.ElementNotFoundException;
 import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.exception.NoDataFoundException;
-import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.exception.TecnologyAlreadyExistsException;
+import com.pragma.arquetipobootcamp2024.adapters.driven.jpa.mysql.exception.TechnologyAlreadyExistsException;
 import com.pragma.arquetipobootcamp2024.configuration.Constants;
 import com.pragma.arquetipobootcamp2024.domain.exception.EmptyFieldException;
 import com.pragma.arquetipobootcamp2024.domain.exception.NegativeNotAllowedException;
@@ -40,9 +41,15 @@ public class ControllerAdvisor {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(
                 Constants.ELEMENT_NOT_FOUND_EXCEPTION_MESSAGE, HttpStatus.CONFLICT.toString(), LocalDateTime.now()));
     }
-    @ExceptionHandler(TecnologyAlreadyExistsException.class)
+    @ExceptionHandler(TechnologyAlreadyExistsException.class)
     public ResponseEntity<ExceptionResponse> handleProductAlreadyExistsException() {
-        return ResponseEntity.badRequest().body(new ExceptionResponse(Constants.TECNOLOGY_ALREADY_EXISTS_EXCEPTION_MESSAGE,
+        return ResponseEntity.badRequest().body(new ExceptionResponse(Constants.TECHNOLOGY_ALREADY_EXISTS_EXCEPTION_MESSAGE,
+                HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
+    }
+
+    @ExceptionHandler(CapabilityAlreadyExistsException.class)
+    public ResponseEntity<ExceptionResponse> handleCapabilityAlreadyExistsException() {
+        return ResponseEntity.badRequest().body(new ExceptionResponse(Constants.CAPABILITY_ALREADY_EXISTS_EXCEPTION_MESSAGE,
                 HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
     }
 }
